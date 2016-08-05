@@ -58,5 +58,11 @@ while True:
     l = msg_csv[4]
     c = msg_csv[5]
 
-    socket.send(str(b2_rpy_arima.get_prev_forecast(dt,sym)))
+    prev_fcast = b2_rpy_arima.get_prev_forecast(dt,sym)
+    if prev_fcast is None:
+        sPrevFcast = "-1.0"
+    else:
+        sPrevFcast = str(prev_fcast)
+    print "%s %s %s" % (dt,sym,sPrevFcast)
+    socket.send(sPrevFcast)
 

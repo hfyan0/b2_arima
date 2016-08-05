@@ -40,11 +40,6 @@ class B2_rpy_arima(object):
         # print filelist
         for symfile in filelist:
             ###################################################
-            # FIXME: for testing
-            ###################################################
-            if symfile != 'AGG.csv':
-                continue
-            ###################################################
             # FIXME: right now there will be no result if it wasn't already in the file
             ###################################################
             with open(self.ForecastFolder+'/'+symfile,'r') as f:
